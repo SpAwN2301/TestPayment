@@ -113,6 +113,23 @@ input {
     margin-bottom: 16px;
 }
 
+.product-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.product .product__deleteBtn {
+    cursor: pointer;
+    margin-bottom: 14px;
+    margin-left: 5px;
+
+    width: 13px;
+    height: 13px;
+
+    background-color: transparent;
+    border: none;
+}
+
 .product .product__title {
     margin-bottom: 12px;
 }
