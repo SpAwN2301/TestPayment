@@ -4,6 +4,8 @@ let products = document.getElementById('products');
 let addBtn = document.getElementById('addBtn');
 let continueBtn = document.getElementById('continue');
 
+let firstForm = document.getElementsByClassName('paymentWidget__form')[0];
+
 let priceList = document.getElementsByClassName('priceList__tariff');
 
 const productsArr = ['product 1'];
@@ -15,12 +17,16 @@ addBtn.addEventListener('click', ()=>{
     secondView.style.display = "block";
 });
 
+firstForm.addEventListener('click', (e)=>{
+    e.preventDefault();
+});
+
 continueBtn.addEventListener('click', ()=>{
     productsArr.length = 0;
 
     for(let i = 0; i < priceList.length; i++){
         if(priceList[i].querySelector('input').checked){
-            for(let j = 0; j < i + 1; j++){
+            for(let j = 0; j < 5 - i; j++){
                 productsArr.push(`product ${j+1}`);
             }
         }
