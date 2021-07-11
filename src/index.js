@@ -15,6 +15,7 @@ let firstForm = document.getElementsByClassName('paymentWidget__form')[0];
 let products = document.getElementById('products');
 let priceList = document.getElementsByClassName('priceList__tariff');
 
+const url = window.location;
 const productsArr = ['product 1'];
 let resultPrice = 24.99;
 let paymentState = false;
@@ -55,13 +56,13 @@ submitBtn.addEventListener('click', ()=>{
 backBtn.addEventListener('click', ()=>{
     successView.style.display = 'none';
     firstView.style.display = 'block';
-    window.location = "https://spawn2301.github.io/TestPayment/#";
+    window.location = url + '#';
 });
 
 againBtn.addEventListener('click', ()=>{
     failView.style.display = 'none';
     firstView.style.display = 'block';
-    window.location = "https://spawn2301.github.io/TestPayment/#";
+    window.location = url + '#';
 });
 
 function productsRender () {
@@ -145,13 +146,13 @@ function checkPaymentState() {
     if(paymentState){
         firstView.style.display = 'none';
         successView.style.display = 'block';
-        //url succes
-        window.location = "https://spawn2301.github.io/TestPayment/#success";
+
+        window.location = url + "#success";
     }else{
         firstView.style.display = 'none';
         failView.style.display = 'block';
-        //url fail
-        window.location = "https://spawn2301.github.io/TestPayment/#fail";
+
+        window.location = url + "#fail";
     }
 
     loaderBtn.style.display = 'none';
