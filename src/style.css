@@ -30,6 +30,9 @@ input {
     overflow-y: scroll;
     padding-right: 16px;
     max-height: 375px;
+            
+    animation: fadeIn;
+    animation-duration: 0.5s;
 }
 
 .screen-1::-webkit-scrollbar {
@@ -56,6 +59,7 @@ input {
 }
 
 .paymentWidget {
+    overflow-x: hidden;
     position: relative;
     
     background-color: #FFFFFF;
@@ -69,6 +73,9 @@ input {
 
     border-radius: 50px;
     border-top-left-radius: 0;
+    
+    animation: pulse;
+    animation-duration: 0.5s;
 }
 
 .paymentWidget h2 {
@@ -111,6 +118,9 @@ input {
 
 .product {
     margin-bottom: 16px;
+ 
+    animation: flipInX;
+    animation-duration: 0.5s;
 }
 
 .product-wrapper {
@@ -220,6 +230,9 @@ input {
 .screen-2 {
     display: none;
     padding-right: 16px;
+
+    animation: fadeIn;
+    animation-duration: 0.5s;
 }
 
 .priceList {
@@ -352,6 +365,9 @@ input {
 .screen-success, .screen-fail {
     display: none;
     padding-right: 20px;
+            
+    animation: fadeIn;
+    animation-duration: 0.5s;
 }
 
 .screen-success .success__descrip {
@@ -396,4 +412,136 @@ input {
     .payment {
         padding: 138px 0;
     }
+}
+
+
+@-webkit-keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+}
+@keyframes pulse {
+    from {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        -webkit-transform: scale3d(1.05, 1.05, 1.05);
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
+.animate__pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+.animate__fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+
+
+@-webkit-keyframes flipInX {
+    from {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    40% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    }
+  
+    80% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+  
+    to {
+      -webkit-transform: perspective(400px);
+      transform: perspective(400px);
+    }
+}
+@keyframes flipInX {
+    from {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    }
+
+    80% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+
+    to {
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px);
+    }
+}
+.animate__flipInX {
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
 }

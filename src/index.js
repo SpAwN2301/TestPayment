@@ -131,7 +131,7 @@ function calcFinalPrice() {
             break;
         
         default:
-            console.log('error')
+            console.log('no products')
     }
 
     price.textContent = resultPrice;
@@ -159,7 +159,6 @@ function deleteProduct() {
     for(let i = 0; i < deleteBtns.length; i++){
         deleteBtns[i].addEventListener('click', ()=>{
             productsArr.pop();
-            console.log(productsArr);
             productsRender();
         });
     }
