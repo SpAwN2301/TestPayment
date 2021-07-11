@@ -55,11 +55,13 @@ submitBtn.addEventListener('click', ()=>{
 backBtn.addEventListener('click', ()=>{
     successView.style.display = 'none';
     firstView.style.display = 'block';
+    window.location = "http://127.0.0.1:5500/src/#";
 });
 
 againBtn.addEventListener('click', ()=>{
     failView.style.display = 'none';
     firstView.style.display = 'block';
+    window.location = "http://127.0.0.1:5500/src/#";
 });
 
 function productsRender () {
@@ -143,9 +145,13 @@ function checkPaymentState() {
     if(paymentState){
         firstView.style.display = 'none';
         successView.style.display = 'block';
+        //url succes
+        window.location = "http://127.0.0.1:5500/src/#success";
     }else{
         firstView.style.display = 'none';
         failView.style.display = 'block';
+        //url fail
+        window.location = "http://127.0.0.1:5500/src/#fail";
     }
 
     loaderBtn.style.display = 'none';
