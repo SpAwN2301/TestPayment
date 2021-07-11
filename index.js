@@ -9,6 +9,7 @@ let submitBtn = document.getElementById('submitBtn');
 let backBtn = document.getElementById('backBtn');
 let againBtn = document.getElementById('againBtn');
 let loaderBtn = document.getElementById('loaderBtn');
+let deleteBtns = document.getElementsByClassName('product__deleteBtn');
 
 let firstForm = document.getElementsByClassName('paymentWidget__form')[0];
 let products = document.getElementById('products');
@@ -64,10 +65,14 @@ againBtn.addEventListener('click', ()=>{
 function productsRender () {
     products.innerHTML = ''
 
-    for(let i = 0; i < productsArr.length; i++){
-        products.innerHTML += `
+    if(productsArr.length == 1){
+        products.innerHTML = `
         <li class="product">
-            <h2 class="product__title">Product ${i+1}</h2>
+
+            <div class="product-wrapper">
+                <h2 class="product__title">Product 1</h2>
+            </div>
+            
             <div class="product__descrip">Enter main keyword for the product</div>
             <input name="keyword" placeholder="for example, sylicon wine cup" type="text">
 
@@ -75,8 +80,29 @@ function productsRender () {
             <input name="link" placeholder="https://..." type="text">
         </li>
         `
+    }else{
+        for(let i = 0; i < productsArr.length; i++){
+            products.innerHTML += `
+            <li class="product">
+    
+                <div class="product-wrapper">
+                    <h2 class="product__title">Product ${i+1}</h2>
+                    <button class="product__deleteBtn">
+                        <img src="icons/close.svg" alt="">
+                    </button>
+                </div>
+                
+                <div class="product__descrip">Enter main keyword for the product</div>
+                <input name="keyword" placeholder="for example, sylicon wine cup" type="text">
+    
+                <div class="product__descrip">Enter link to the similar product as a reference</div>
+                <input name="link" placeholder="https://..." type="text">
+            </li>
+            `
+        }
     }
 
+    deleteProduct();
     calcFinalPrice();
 }
 
@@ -105,7 +131,7 @@ function calcFinalPrice() {
             break;
         
         default:
-            console.log('error')
+            console.log('no products')
     }
 
     price.textContent = resultPrice;
@@ -127,4 +153,13 @@ function checkPaymentState() {
 
 function load() {
     loaderBtn.style.display = 'block';
+}
+
+function deleteProduct() {      
+    for(let i = 0; i < deleteBtns.length; i++){
+        deleteBtns[i].addEventListener('click', ()=>{
+            productsArr.pop();
+            productsRender();
+        });
+    }
 }
