@@ -202,12 +202,11 @@ input {
 
 .screen-2 {
     display: none;
+    padding-right: 16px;
 }
 
 .priceList {
-    padding: 11px 17px;
-
-    border: 1px solid #F4F5FA;
+    border: 4px solid #F4F5FA;
     border-radius: 15px;
 }
 
@@ -218,17 +217,22 @@ input {
     display: flex;
     align-items: center;
 
-    margin-bottom: 15px;
+    width: 100%;
+    height: 57px;
+}
+
+.priceList .priceList__tariff:hover {
+    background-color: #F4F5FA;
 }
 
 .priceList .priceList__tariff::after {
     content: "";
 
     position: absolute;
-    bottom: -8px;
-    left: -18px;
+    bottom: 0;
+    left: 0;
 
-    width: calc(100% + 35px);
+    width: 100%;
 
     border-bottom: 1px solid #F4F5FA; 
 }
@@ -253,19 +257,25 @@ input {
     position: relative;
     
     width: 100%;
-    padding-left: 28px;
+    height: 100%;
+
+    padding-left: 51px;
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
     color: #E1E3EE;
 }
 
+[type="radio"]:checked + label > .priceList__descrip {
+    color: #23C967;
+}
+
 [type="radio"]:checked + label:before,
 [type="radio"]:not(:checked) + label:before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 17px;
+    top: 19px;
     width: 18px;
     height: 18px;
     border: 1px solid #E1E3EE;
@@ -280,8 +290,8 @@ input {
     height: 12px;
     background: #23C967;
     position: absolute;
-    top: 4px;
-    left: 4px;
+    top: 23px;
+    left: 21px;
     border-radius: 100%;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
@@ -300,6 +310,7 @@ input {
 }
 
 .priceList .priceList__title {
+    margin-top: 10px;
     margin-bottom: 5px;
 
     font-weight: 600;
@@ -310,7 +321,7 @@ input {
 }
 
 .priceList .priceList__title:last-child {
-    margin-bottom: 0;
+    margin-top: 18px;
 }
 
 .priceList .priceList__descrip {
