@@ -1,14 +1,22 @@
 let firstView = document.getElementsByClassName('screen-1')[0];
 let secondView = document.getElementsByClassName('screen-2')[0];
-let products = document.getElementById('products');
+let successView = document.getElementsByClassName('screen-success')[0];
+let failView = document.getElementsByClassName('screen-fail')[0];
+
 let addBtn = document.getElementById('addBtn');
 let continueBtn = document.getElementById('continue');
+let submitBtn = document.getElementById('submitBtn');
+let backBtn = document.getElementById('backBtn');
+let againBtn = document.getElementById('againBtn');
+let loaderBtn = document.getElementById('loaderBtn');
 
 let firstForm = document.getElementsByClassName('paymentWidget__form')[0];
-
+let products = document.getElementById('products');
 let priceList = document.getElementsByClassName('priceList__tariff');
 
 const productsArr = ['product 1'];
+let resultPrice = 24.99;
+let paymentState = false;
 
 productsRender();
 
@@ -38,6 +46,21 @@ continueBtn.addEventListener('click', ()=>{
     firstView.style.display = "block";
 });
 
+submitBtn.addEventListener('click', ()=>{
+    load();
+    setTimeout(checkPaymentState, 2000);
+});
+
+backBtn.addEventListener('click', ()=>{
+    successView.style.display = 'none';
+    firstView.style.display = 'block';
+});
+
+againBtn.addEventListener('click', ()=>{
+    failView.style.display = 'none';
+    firstView.style.display = 'block';
+});
+
 function productsRender () {
     products.innerHTML = ''
 
@@ -53,4 +76,55 @@ function productsRender () {
         </li>
         `
     }
+
+    calcFinalPrice();
+}
+
+function calcFinalPrice() {
+    let price = submitBtn.querySelector('span');
+
+    switch (productsArr.length) {
+        case 1:
+            resultPrice = 24.99;
+            break;
+
+        case 2:
+            resultPrice = 44;
+            break;
+
+        case 3:
+            resultPrice = 60;
+            break;
+
+        case 4:
+            resultPrice = 72;
+            break;
+        
+        case 5:
+            resultPrice = 80;
+            break;
+        
+        default:
+            console.log('error')
+    }
+
+    price.textContent = resultPrice;
+}
+
+function checkPaymentState() {
+    paymentState = Math.random() < 0.5;
+    
+    if(paymentState){
+        firstView.style.display = 'none';
+        successView.style.display = 'block';
+    }else{
+        firstView.style.display = 'none';
+        failView.style.display = 'block';
+    }
+
+    loaderBtn.style.display = 'none';
+}
+
+function load() {
+    loaderBtn.style.display = 'block';
 }

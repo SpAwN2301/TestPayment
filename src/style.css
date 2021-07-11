@@ -8,6 +8,11 @@
     font-family: sans-serif;
 }
 
+svg path,
+svg rect{
+    fill: #F4F5FA;
+}
+
 li {
     list-style-type: none;
 }
@@ -91,7 +96,7 @@ input {
     width: 100%;
     
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #E1E3EE;
 
     font-weight: normal;
     font-size: 16px;
@@ -174,14 +179,19 @@ input {
     color: #FFFFFF;
 }
 
+.button.button_red {
+    background-color:#EA717F;
+}
+
+.button.button_loader {
+    display: none;
+    z-index: 2;
+}
+
 .paymentWidget .paymentWidget__secure {
     position: absolute;
     bottom: 40px;
     left: 30%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     font-weight: normal;
     font-size: 14px;
@@ -309,6 +319,49 @@ input {
     line-height: 16px;
 
     color: #A7A2CB;
+}
+
+.screen-success, .screen-fail {
+    display: none;
+    padding-right: 20px;
+}
+
+.screen-success .success__descrip {
+    margin-bottom: 34px;
+
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+
+    color: #1C154E;
+
+    opacity: 0.8;
+}
+
+.screen-success .success__img {
+    display: block;
+    margin: 0 auto;
+    width: 157px;
+    height: 122.5px;
+}
+
+.screen-fail .fail__descrip {
+    margin-bottom: 4px;
+
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+
+    color: #1C154E;
+
+    opacity: 0.8;
+}
+
+.screen-fail .fail__img {
+    display: block;
+    margin: 0 auto;
+    width: 310px;
+    height: 246px;
 }
 
 @media screen and (max-width: 768px) {

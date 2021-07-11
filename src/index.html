@@ -29,7 +29,26 @@
         
                             <div class="paymentWidget__descrip">We offer discount up to 36% for multiple checks</div>
         
-                            <button class="button button_submit">Submit and Pay 24.99 USD</button>
+                            <button id="submitBtn" class="button button_submit">Submit and Pay <span>24.99</span> USD</button>
+
+                            <button id="loaderBtn" class="button button_loader">
+                                <div class="loader">
+                                    <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                       width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                                        <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                                            <animateTransform attributeType="xml"
+                                                attributeName="transform"
+                                                type="rotate"
+                                                from="0 25 25"
+                                                to="360 25 25"
+                                                dur="0.6s"
+                                                repeatCount="indefinite"
+                                            />
+                                        </path>
+                                    </svg>
+                                </div>
+                            </button>
+
                             <div class="paymentWidget__secure">
                                 <img src="icons/lock.svg" alt="">
                                 Secure payment with Stripe
@@ -84,6 +103,22 @@
                             
                             <button id="continue" class="button">Continue</button>
                         </div>
+                    </div>
+
+                    <div class="screen-success">
+                        <h2 class="success__title">Successfull payment</h2>
+                        <div class="success__descrip">Your request has been accepted and will be processed within 24 working hours. We will send you a payment details and all information to your email.</div>
+                        <img src="img/success.png" alt="success" class="success__img">
+
+                        <button id="backBtn" class="button">Back</button>
+                    </div>
+
+                    <div class="screen-fail">
+                        <h2 class="fail__title">Your payment failed</h2>
+                        <div class="fail__descrip">Sorry, but we’ve having trouble processing your payment. You have been not charged for this transaction.</div>
+                        <img src="img/fail.png" alt="fail" class="fail__img">
+
+                        <button id="againBtn" class="button button_red">Try to pay again</button>
                     </div>
                 </div>
             </div>
