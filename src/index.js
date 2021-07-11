@@ -15,11 +15,12 @@ let firstForm = document.getElementsByClassName('paymentWidget__form')[0];
 let products = document.getElementById('products');
 let priceList = document.getElementsByClassName('priceList__tariff');
 
-const url = window.location;
+const url = window.location.href;
 const productsArr = ['product 1'];
 let resultPrice = 24.99;
 let paymentState = false;
 
+console.log(url.href)
 productsRender();
 
 addBtn.addEventListener('click', ()=>{
@@ -56,13 +57,13 @@ submitBtn.addEventListener('click', ()=>{
 backBtn.addEventListener('click', ()=>{
     successView.style.display = 'none';
     firstView.style.display = 'block';
-    window.location = url + '#';
+    window.location.href = url + '#';
 });
 
 againBtn.addEventListener('click', ()=>{
     failView.style.display = 'none';
     firstView.style.display = 'block';
-    window.location = url + '#';
+    window.location.href = url + '#';
 });
 
 function productsRender () {
@@ -147,12 +148,12 @@ function checkPaymentState() {
         firstView.style.display = 'none';
         successView.style.display = 'block';
 
-        window.location = url + "#success";
+        window.location.href = url + "#success";
     }else{
         firstView.style.display = 'none';
         failView.style.display = 'block';
 
-        window.location = url + "#fail";
+        window.location.href = url + "#fail";
     }
 
     loaderBtn.style.display = 'none';
