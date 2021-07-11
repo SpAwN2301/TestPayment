@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Payment</title>
+</head>
+<body>
+    <section class="payment">
+        <div class="container">
+            <div class="paymentWidget">
+                <div class="screens">
+                    <div class="screen-1">
+                        <form action="#" class="paymentWidget__form">
+                            <h2 class="paymentWidget__subtitle">Info</h2>
+                            <div class="paymentWidget__descrip">Enter your email address</div>
+                            <input name="email" placeholder="team@checkforpatent.com" type="email">
+                            
+                            <ul id="products" class="product__wrapper">
+
+                            </ul>
+        
+                            <button class="paymentWidget__addBtn" id="addBtn">
+                                Add more products  
+                                <img src="icons/add.svg" alt="">
+                            </button>
+        
+                            <div class="paymentWidget__descrip">We offer discount up to 36% for multiple checks</div>
+        
+                            <button class="button button_submit">Submit and Pay 24.99 USD</button>
+                            <div class="paymentWidget__secure">
+                                <img src="icons/lock.svg" alt="">
+                                Secure payment with Stripe
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="screen-2">
+                        <div class="priceList-wrapper">
+                            <h2 class="paymentWidget__subtitle">Adding more products</h2>
+                            <div class="paymentWidget__descrip">The more items you check, the better the price.</div>
+                            <form action="#" class="priceList">
+                                <div class="priceList__tariff">
+                                    <input type="radio" name="tariff">
+                                    <div class="priceList__text">
+                                        <div class="priceList__title">5 products for 80 usd / 16$ for each</div>
+                                        <div class="priceList__descrip">You safe 36% on each patent check</div>
+                                    </div>
+                                </div>
+            
+                                <div class="priceList__tariff">
+                                    <input type="radio" name="tariff">
+                                    <div class="priceList__text">
+                                        <div class="priceList__title">4 products for 72 usd / 18$ for each</div>
+                                        <div class="priceList__descrip">You safe 28% on each patent check</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="priceList__tariff">
+                                    <input type="radio" name="tariff">
+                                    <div class="priceList__text">
+                                        <div class="priceList__title">3 products for 60 usd / 20$ for each</div>
+                                        <div class="priceList__descrip">You safe 20% on each patent check</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="priceList__tariff">
+                                    <input type="radio" name="tariff">
+                                    <div class="priceList__text">
+                                        <div class="priceList__title">2 products for 44 usd / 22$ for each</div>
+                                        <div class="priceList__descrip">You safe 12% on each patent check</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="priceList__tariff">
+                                    <input type="radio" name="tariff">
+                                    <div class="priceList__text">
+                                        <div class="priceList__title">1 product for 24.99 usd</div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <button id="continue" class="button">Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
