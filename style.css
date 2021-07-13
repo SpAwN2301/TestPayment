@@ -424,6 +424,10 @@ input {
 }
 
 @media screen and (max-width: 768px) {
+    .paymentWidget .paymentWidget__bg {
+        display: none;
+    }
+    
     .payment {
         padding: 138px 0;
     }
